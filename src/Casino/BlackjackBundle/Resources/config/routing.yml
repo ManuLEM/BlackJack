@@ -1,0 +1,35 @@
+get_blackjack_homepage:
+    path:     /
+    defaults: { _controller: CasinoBlackjackBundle:Player:index }
+    requirements:
+        _method:  GET
+
+get_blackjack_login:
+    path:     /login
+    defaults: { _controller: CasinoBlackjackBundle:Player:login }
+    requirements:
+        _method:  GET
+
+post_blackjack_login:
+    path:     /login
+    defaults: { _controller: CasinoBlackjackBundle:Player:createPlayer }
+    requirements:
+        _method:  POST
+
+blackjack_start_game:
+    path:     /start
+    defaults: { _controller: CasinoBlackjackBundle:Game:start }
+    requirements:
+        _method:  GET
+
+blackjack_game:
+    path:     /game
+    defaults: { _controller: CasinoBlackjackBundle:Game:play }
+    requirements:
+        _method:  GET
+
+blackjack_bet:
+    path:     /bet
+    defaults: { _controller: CasinoBlackjackBundle:Game:bet }
+    requirements:
+        _method:  POST

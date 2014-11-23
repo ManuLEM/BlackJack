@@ -1,0 +1,12 @@
+{% extends 'CasinoBlackjackBundle::layout.html.twig' %}
+
+{% block body %}
+    <h1>Hello {{ player.name }}</h1>
+    <form action="{{ path('blackjack_bet') }}" method="post">
+        <p>Your wallet: {{ player.wallet }}</p>
+        <p>Your bet: <input type="number" name="bet" value="{{ round.bet }}" max="{{ player.wallet }}" min="10"></p>
+        <input type="hidden" name="roundId" value="{{ round.id }}">
+        <p>Your score: {{ game.score }}</p>
+        <input type="submit" value="Bet">
+    </form>
+{% endblock %}

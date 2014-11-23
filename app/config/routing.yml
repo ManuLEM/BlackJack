@@ -1,0 +1,4 @@
+casino_blackjack:
+    resource: "@CasinoBlackjackBundle/Resources/config/routing.yml"
+    prefix:   /
+

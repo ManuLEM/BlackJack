@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Loa",
+				"LoaderInterface"
+			],
+			[
 				"cat",
 				"category"
 			],
@@ -463,6 +467,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/Casino/BlackjackBundle/Entity/Game.php",
+			"settings":
+			{
+				"buffer_size": 1222,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Casino/BlackjackBundle/Entity/Deck.php",
+			"settings":
+			{
+				"buffer_size": 302,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Casino/BlackjackBundle/Controller/DefaultController.php",
+			"settings":
+			{
+				"buffer_size": 765,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Casino/BlackjackBundle/Resources/views/Default/index.html.twig",
+			"settings":
+			{
+				"buffer_size": 109,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Casino/BlackjackBundle/Entity/Player.php",
+			"settings":
+			{
+				"buffer_size": 1592,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -532,19 +576,40 @@
 	},
 	"expanded_folders":
 	[
+		"/home/manuel/development/www/BlackJack",
+		"/home/manuel/development/www/BlackJack/src",
+		"/home/manuel/development/www/BlackJack/src/Casino",
+		"/home/manuel/development/www/BlackJack/src/Casino/BlackjackBundle",
+		"/home/manuel/development/www/BlackJack/src/Casino/BlackjackBundle/Form",
+		"/home/manuel/development/www/BlackJack/src/Casino/BlackjackBundle/Form/Type"
 	],
 	"file_history":
 	[
+		"/home/manuel/development/www/BlackJack/src/Casino/BlackjackBundle/Form/Type/PlayerType.php",
+		"/home/manuel/.ssh/bitbucket.pub",
+		"/home/manuel/development/www/Symfony/src/Acme/TaskBundle/Entity/Task.php",
 		"/home/manuel/development/www/Symfony/src/Acme/TaskBundle/Form/Type/TaskType.php",
-		"/home/manuel/development/www/Symfony/src/Acme/TaskBundle/Task/Task.php",
+		"/home/manuel/development/www/Symfony/src/Acme/BlogBundle/Entity/Author.php",
+		"/home/manuel/development/www/Symfony/src/Acme/TaskBundle/Controller/DefaultController.php",
 		"/home/manuel/development/www/Symfony/src/Acme/BlogBundle/Controller/DefaultController.php",
-		"/home/manuel/development/www/Symfony/src/Acme/StoreBundle/Resources/config/routing.yml",
+		"/home/manuel/development/www/BlackJack/src/Casino/BlackjackBundle/Resources/config/deck.yml",
+		"/home/manuel/development/www/BlackJack/src/Casino/BlackjackBundle/Resources/views/layout.html.twig",
+		"/home/manuel/development/www/BlackJack/src/Casino/BlackjackBundle/Resources/views/Default/index.html.twig",
+		"/home/manuel/development/www/BlackJack/src/Casino/BlackjackBundle/Resources/config/routing.yml",
 		"/home/manuel/development/www/Symfony/src/Acme/StoreBundle/Controller/DefaultController.php",
+		"/home/manuel/development/www/Symfony/src/Acme/DemoBundle/AcmeDemoBundle.php",
+		"/home/manuel/development/www/Symfony/src/Acme/StoreBundle/AcmeStoreBundle.php",
+		"/home/manuel/development/www/BlackJack/src/Casino/BlackjackBundle/Entity/Revealed.php",
+		"/home/manuel/development/www/BlackJack/src/Casino/BlackjackBundle/Entity/Round.php",
+		"/home/manuel/development/www/Symfony/src/Acme/StoreBundle/Entity/ProductRepository.php",
+		"/home/manuel/development/www/BlackJack/app/AppKernel.php",
+		"/home/manuel/development/www/BlackJack/app/config/routing.yml",
+		"/home/manuel/development/www/Symfony/src/Acme/TaskBundle/Task/Task.php",
+		"/home/manuel/development/www/Symfony/src/Acme/StoreBundle/Resources/config/routing.yml",
 		"/home/manuel/development/www/Symfony/src/Acme/StoreBundle/Resources/views/Default/show.html.twig",
 		"/home/manuel/development/www/Symfony/src/Acme/StoreBundle/Resources/views/Default/index.html.twig",
 		"/home/manuel/development/www/Symfony/src/TD/RandomBundle/Controller/RandomController.php",
 		"/home/manuel/development/www/Symfony/src/Acme/StoreBundle/Entity/Product.php",
-		"/home/manuel/development/www/Symfony/src/Acme/StoreBundle/Entity/ProductRepository.php",
 		"/home/manuel/development/www/Symfony/src/Acme/StoreBundle/Entity/Category.php",
 		"/home/manuel/development/www/Symfony/src/Acme/StoreBundle/Resources/views/Default/price.html.twig",
 		"/home/manuel/.config/sublime-text-3/Packages/Theme - Brogrammer/Brogrammer.sublime-theme",
@@ -647,22 +712,7 @@
 		"/home/manuel/development/www/community/app/routes.php",
 		"/home/manuel/development/www/chanel-back/app/views/product/header.blade.php",
 		"/home/manuel/development/www/chanel-back/app/views/layouts/default.blade.php",
-		"/home/manuel/development/www/chanel-back/app/views/user/list.blade.php",
-		"/home/manuel/development/www/community/app/views/admin/stories/list.blade.php",
-		"/home/manuel/development/www/chanel-back/app/database/seeds/ProductTagTableSeeder.php",
-		"/home/manuel/development/www/chanel-back/app/database/migrations/2014_07_09_164026_create_schema.php",
-		"/home/manuel/development/www/chanel-back/app/database/seeds/ProductTableSeeder.php",
-		"/home/manuel/development/www/chanel-back/app/controllers/BaseController.php",
-		"/home/manuel/development/www/community/app/database/seeds/DatabaseSeeder.php",
-		"/home/manuel/development/www/chanel-back/app/views/layouts/login.blade.php",
-		"/home/manuel/development/www/chanel-back/app/models/User.php",
-		"/home/manuel/development/www/chanel-back/app/database/seeds/UserTableSeeder.php",
-		"/home/manuel/development/www/chanel-back/app/views/user/login.blade.php",
-		"/home/manuel/development/www/chanel-back/public/css/style.css",
-		"/home/manuel/development/www/community/app/controllers/Community/UserController.php",
-		"/home/manuel/development/www/chanel-back/app/models/Tag.php",
-		"/home/manuel/development/www/community/app/models/User.php",
-		"/home/manuel/development/www/community/public/css/default.css"
+		"/home/manuel/development/www/chanel-back/app/views/user/list.blade.php"
 	],
 	"find":
 	{
@@ -690,6 +740,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Acme",
+			"$author",
+			"author",
+			"coeur",
+			"diamond",
+			"coeur",
+			"1, 11",
 			"51",
 			"51,51,51",
 			"delete",
@@ -810,14 +867,7 @@
 			"title",
 			"name",
 			"product",
-			"<textarea",
-			"product",
-			"input",
-			"ProductController",
-			"p",
-			"`",
-			"structure",
-			"Welcome"
+			"<textarea"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -844,8 +894,154 @@
 	"groups":
 	[
 		{
+			"selected": 4,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/Casino/BlackjackBundle/Entity/Game.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1222,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								951,
+								951
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Casino/BlackjackBundle/Entity/Deck.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/Casino/BlackjackBundle/Controller/DefaultController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 765,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								411,
+								411
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/Casino/BlackjackBundle/Resources/views/Default/index.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 109,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								90,
+								90
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Twig/Syntaxes/HTML (Twig).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/Casino/BlackjackBundle/Entity/Player.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1592,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								278,
+								278
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

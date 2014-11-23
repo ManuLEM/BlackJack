@@ -1,0 +1,7 @@
+{% extends 'CasinoBlackjackBundle::layout.html.twig' %}
+
+{% block body %}
+    <h1>Hello {{ player.name }}</h1>
+    <p>Your wallet: {{ player.wallet }}</p>
+    <a href="{{ path('blackjack_start_game') }}"><button>Start a new game</button></a>
+{% endblock %}
