@@ -40,7 +40,7 @@ class Player
      *
      * @ORM\Column(name="wallet", type="integer")
      */
-    private $wallet;
+    private $wallet = 10000;
 
     /**
      * Get player

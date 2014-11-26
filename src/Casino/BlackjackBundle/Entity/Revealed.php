@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Revealed
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Casino\BlackjackBundle\Entity\RevealedRepository")
  */
 class Revealed
 {
@@ -96,5 +96,28 @@ class Revealed
     public function getRound()
     {
         return $this->round;
+    }
+
+    /**
+     * Set playerType
+     *
+     * @param string $playerType
+     * @return Revealed
+     */
+    public function setPlayerType($playerType)
+    {
+        $this->playerType = $playerType;
+
+        return $this;
+    }
+
+    /**
+     * Get playerType
+     *
+     * @return string 
+     */
+    public function getPlayerType()
+    {
+        return $this->playerType;
     }
 }

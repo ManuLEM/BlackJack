@@ -22,12 +22,12 @@ class Deck
         $nameArray = array('name' => $name);
 
         if (in_array($nameArray, $revealedNames)) {
-            return $this->draw($round, $revealedNames);
+            return $this->draw($round, $revealedNames, $playerType);
         }
 
         $revealed = new Revealed();
         $revealed->setName($name);
-        $revealed->setPlayerType($name);
+        $revealed->setPlayerType($playerType);
         $revealed->setRound($round);
 
         return $revealed;

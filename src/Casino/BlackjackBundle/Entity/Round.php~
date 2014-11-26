@@ -15,10 +15,10 @@ class Round
     /**
      * @ORM\OneToMany(targetEntity="Revealed", mappedBy="round")
      */
-    protected $revealed;
+    protected $revealeds;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Game", inversedBy="round")
+     * @ORM\ManyToOne(targetEntity="Game", inversedBy="rounds")
      * @ORM\JoinColumn(name="game_id", referencedColumnName="id")
      */
     protected $game;
@@ -37,14 +37,14 @@ class Round
      *
      * @ORM\Column(name="bet", type="integer")
      */
-    private $bet;
+    private $bet = 0;
 
     /**
-     * @var boolean
+     * @var string
      *
-     * @ORM\Column(name="won", type="boolean")
+     * @ORM\Column(name="won", type="string", length=50)
      */
-    private $won;
+    private $won = '';
 
 
     /**
@@ -107,40 +107,40 @@ class Round
      */
     public function __construct()
     {
-        $this->revealed = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->revealeds = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add revealed
+     * Add revealeds
      *
      * @param \Casino\BlackjackBundle\Entity\Revealed $revealed
      * @return Round
      */
     public function addRevealed(\Casino\BlackjackBundle\Entity\Revealed $revealed)
     {
-        $this->revealed[] = $revealed;
+        $this->revealeds[] = $revealed;
 
         return $this;
     }
 
     /**
-     * Remove revealed
+     * Remove revealeds
      *
      * @param \Casino\BlackjackBundle\Entity\Revealed $revealed
      */
     public function removeRevealed(\Casino\BlackjackBundle\Entity\Revealed $revealed)
     {
-        $this->revealed->removeElement($revealed);
+        $this->revealeds->removeElement($revealed);
     }
 
     /**
-     * Get revealed
+     * Get revealeds
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
     public function getRevealed()
     {
-        return $this->revealed;
+        return $this->revealeds;
     }
 
     /**

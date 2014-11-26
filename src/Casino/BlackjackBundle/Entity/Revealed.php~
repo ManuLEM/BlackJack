@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Revealed
 {
     /**
-     * @ORM\ManyToOne(targetEntity="Round", inversedBy="revealed")
+     * @ORM\ManyToOne(targetEntity="Round", inversedBy="revealeds")
      * @ORM\JoinColumn(name="round_id", referencedColumnName="id")
      */
     protected $round;
@@ -32,8 +32,15 @@ class Revealed
      *
      * @ORM\Column(name="name", type="string", length=50)
      */
-    private $name;
 
+    private $name;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="player_type", type="string", length=50)
+     */
+    private $playerType;
 
     /**
      * Get id

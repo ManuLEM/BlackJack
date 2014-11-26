@@ -18,7 +18,7 @@ class Game
     protected $rounds;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Player", inversedBy="game")
+     * @ORM\ManyToOne(targetEntity="Player", inversedBy="games")
      * @ORM\JoinColumn(name="player_id", referencedColumnName="id")
      */
     protected $player;
@@ -37,7 +37,7 @@ class Game
      *
      * @ORM\Column(name="score", type="integer")
      */
-    private $score;
+    private $score = 0;
 
 
     /**

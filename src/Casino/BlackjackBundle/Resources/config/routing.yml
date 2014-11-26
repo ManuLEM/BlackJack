@@ -17,8 +17,14 @@ post_blackjack_login:
         _method:  POST
 
 blackjack_start_game:
-    path:     /start
+    path:     /game/start
     defaults: { _controller: CasinoBlackjackBundle:Game:start }
+    requirements:
+        _method:  GET
+
+blackjack_start_round:
+    path:     /game/round/start
+    defaults: { _controller: CasinoBlackjackBundle:Game:startRound }
     requirements:
         _method:  GET
 
@@ -29,7 +35,25 @@ blackjack_game:
         _method:  GET
 
 blackjack_bet:
-    path:     /bet
+    path:     /game/bet
     defaults: { _controller: CasinoBlackjackBundle:Game:bet }
     requirements:
         _method:  POST
+
+blackjack_playerDraw:
+    path:     /game/draw
+    defaults: { _controller: CasinoBlackjackBundle:Game:playerDraw }
+    requirements:
+        _method:  POST
+
+blackjack_dealerDraw:
+    path:     /game/dealer
+    defaults: { _controller: CasinoBlackjackBundle:Game:dealerDraw }
+    requirements:
+        _method:  POST
+
+blackjack_end_round:
+    path:     /game/round/end
+    defaults: { _controller: CasinoBlackjackBundle:Game:end }
+    requirements:
+        _method:  GET

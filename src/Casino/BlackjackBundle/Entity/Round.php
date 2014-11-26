@@ -83,7 +83,7 @@ class Round
     /**
      * Set won
      *
-     * @param boolean $won
+     * @param string $won
      * @return Round
      */
     public function setWon($won)
@@ -96,7 +96,7 @@ class Round
     /**
      * Get won
      *
-     * @return boolean 
+     * @return string 
      */
     public function getWon()
     {
@@ -164,5 +164,15 @@ class Round
     public function getGame()
     {
         return $this->game;
+    }
+
+    /**
+     * Get revealeds
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRevealeds()
+    {
+        return $this->revealeds;
     }
 }
