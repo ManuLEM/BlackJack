@@ -1,0 +1,11 @@
+{% extends 'CasinoBlackjackBundle::layout.html.twig' %}
+
+{% block body %}
+    <div id="players_list">
+        <ol>
+            {% for player in stats %}
+                <li>{{ player.name }} - {{ player.score }} - {{ player.roundNbr }} rounds - best score : {{ player.maxScore }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endblock %}

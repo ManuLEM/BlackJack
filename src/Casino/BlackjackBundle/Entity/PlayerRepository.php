@@ -12,24 +12,6 @@ use Doctrine\ORM\EntityRepository;
  */
 class PlayerRepository extends EntityRepository
 {
-    public function getPlayerScore($playerId)
-    {
-        $scores =  $this->getEntityManager()
-                        ->createQuery(
-                            'SELECT g.score FROM CasinoBlackjackBundle:Game g
-                            JOIN g.player p
-                            WHERE p.id = :id'
-                        )
-                        ->setParameter('id', $playerId)
-                        ->getResult();
-        $finalScore = 0;
-        foreach ($scores as $score) {
-            $finalScore += $score['score'];
-        }
-
-        return $finalScore;
-    }
-
     public function getRanking()
     {
         $scores =  $this->getEntityManager()
@@ -50,6 +32,34 @@ class PlayerRepository extends EntityRepository
 
         usort($ranking, 'self::sort');
         $ranking = array_slice($ranking, 0, 10);
+        
+        return $ranking;
+    }
+
+    public function getStats()
+    {
+        $stats =  $this->getEntityManager()
+                        ->createQuery(
+                            'SELECT p.id, p.name, g as game FROM CasinoBlackjackBundle:Game g
+                            JOIN g.player p'
+                        )
+                        ->getResult();
+
+        $ranking = array();
+        foreach ($stats as $stat) {
+            if (!isset($ranking[$stat['id']])) {
+                $ranking[$stat['id']]['id'] = $stat['id'];
+                $ranking[$stat['id']]['name'] = $stat['name'];
+                $ranking[$stat['id']]['score'] = 0;
+                $ranking[$stat['id']]['maxScore'] = 0;
+                $ranking[$stat['id']]['roundNbr'] = $stat['game']->getRounds()->count();
+            }
+            $score = $stat['game']->getScore();
+            $ranking[$stat['id']]['score'] += $score;
+            $ranking[$stat['id']]['maxScore'] = max($ranking[$stat['id']]['maxScore'], $score);
+        }
+
+        usort($ranking, 'self::sort');
         
         return $ranking;
     }
