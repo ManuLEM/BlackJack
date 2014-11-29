@@ -63,4 +63,17 @@ class PlayerController extends DefaultController
 
         return $this->redirect($this->generateUrl('get_blackjack_homepage'));
     }
+
+    public function profileAction($playerId)
+    {
+        $player = $this->getCurrentPlayer( $playerId );
+
+        $em = $this->getDoctrine()->getManager();
+        $total = $em->getRepository('CasinoBlackjackBundle:Player')->getTotalScore( $playerId );
+
+        return $this->render('CasinoBlackjackBundle:Player:index.html.twig', array(
+            'player' => $player,
+            'total' => $total
+        ));
+    }
 }

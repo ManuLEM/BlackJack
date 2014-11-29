@@ -1,0 +1,9 @@
+{% extends 'CasinoBlackjackBundle::layout.html.twig' %}
+
+{% block body %}
+    <h1>{{ player.name }}</h1>
+    <h2>Total score : {{ total }}</h2>
+    {% for game in player.games %}
+        <p>{{ game.score }}</p>
+    {% endfor %}
+{% endblock %}

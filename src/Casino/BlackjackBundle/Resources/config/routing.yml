@@ -63,3 +63,9 @@ get_stats:
     defaults: { _controller: CasinoBlackjackBundle:Info:getStats }
     requirements:
         _method:  GET
+
+get_player_page:
+    path:     /player/{playerId}
+    defaults: { _controller: CasinoBlackjackBundle:Player:profile }
+    requirements:
+        _method:  GET

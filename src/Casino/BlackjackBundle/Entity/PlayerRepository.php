@@ -64,6 +64,25 @@ class PlayerRepository extends EntityRepository
         return $ranking;
     }
 
+    public function getTotalScore($playerId)
+    {
+        $scores =  $this->getEntityManager()
+                        ->createQuery(
+                            'SELECT g.score FROM CasinoBlackjackBundle:Game g
+                            JOIN g.player p
+                            WHERE p.id = :playerId'
+                        )
+                        ->setParameter('playerId', $playerId)
+                        ->getResult();
+
+        $finalScore = 0;
+        foreach ($scores as $score) {
+            $finalScore += $score['score'];
+        }
+        
+        return $finalScore;
+    }
+
     private static function sort($a, $b)
     {
         return  $b['score'] - $a['score'];
