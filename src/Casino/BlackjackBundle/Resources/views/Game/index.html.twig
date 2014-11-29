@@ -4,4 +4,10 @@
     <h1>Hello {{ player.name }}</h1>
     <p>Your wallet: {{ player.wallet }}</p>
     <a href="{{ path('blackjack_start_game') }}"><button>Start a new game</button></a>
+
+    <ol>
+        {% for player in ranking %}
+            <li>{{ player.name }} - {{ player.score }}</li>
+        {% endfor %}
+    </ol>
 {% endblock %}

@@ -19,8 +19,13 @@ class PlayerController extends DefaultController
 
         $player = $this->getCurrentPlayer( $session->get('playerId') );
 
+
+        $em = $this->getDoctrine()->getManager();
+        $ranking = $em->getRepository('CasinoBlackjackBundle:Player')->getRanking();
+
         return $this->render('CasinoBlackjackBundle:Game:index.html.twig', array(
             'player' => $player,
+            'ranking' => $ranking
         ));
     }
 
@@ -33,8 +38,12 @@ class PlayerController extends DefaultController
             'method' => 'POST',
         ));
 
+        $em = $this->getDoctrine()->getManager();
+        $ranking = $em->getRepository('CasinoBlackjackBundle:Player')->getRanking();
+
         return $this->render('CasinoBlackjackBundle:Default:index.html.twig', array(
             'form' => $form->createView(),
+            'ranking' => $ranking
         ));
     }
 

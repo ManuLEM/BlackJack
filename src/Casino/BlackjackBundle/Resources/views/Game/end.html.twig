@@ -10,14 +10,6 @@
     {% for playerCard in playerRevealed %}
         <p>{{ playerCard.name }}</p>
     {% endfor %}
-    <form action="{{ path('blackjack_playerDraw') }}" method="post">
-        <input type="hidden" name="roundId" value="{{ round.id }}">
-        <input type="submit" value="Hit me">
-    </form>
-    <form action="{{ path('blackjack_dealerDraw') }}" method="post">
-        <input type="hidden" name="roundId" value="{{ round.id }}">
-        <input type="submit" value="Done">
-    </form>
     <h2>Dealer</h2>
     {% for dealerCard in dealerRevealed %}
         <p>{{ dealerCard.name }}</p>
