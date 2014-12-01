@@ -1,23 +1,28 @@
 {% extends 'CasinoBlackjackBundle::layout.html.twig' %}
 
 {% block body %}
-    <h1>Hello {{ player.name }}</h1>
-    <p>Your wallet: {{ player.wallet }}</p>
-    <p>Your bet: {{ round.bet }}</p>
-    <p>Your score: {{ game.score }}</p>
+    <header id="banner" class="{{ result }}">
+        <h1>{{ player.name }}</h1>
+        <p class="wallet"><i class="icon-moneybag"></i> {{ player.wallet }}</p>
+        <p class="wallet"><i class="icon-coins"></i> {{ game.score }}</p>
+        <p class="wallet">Bet : {{ round.bet }}</p>
+        <p class="message">{{ message }}</p>
+        <a href="{{ path('get_blackjack_homepage') }}"><i class="icon-flag-checkered"></i> Finish Game</a>
+        {% if (player.wallet >= 10) %}
+            <a href="{{ path('blackjack_start_round') }}"><i class="icon-chevron-right"></i> Next Round</a>
+        {% endif %}
+    </header>
     
-    <h2>Player</h2>
-    {% for playerCard in playerRevealed %}
-        <p>{{ playerCard.name }}</p>
-    {% endfor %}
-    <h2>Dealer</h2>
-    {% for dealerCard in dealerRevealed %}
-        <p>{{ dealerCard.name }}</p>
-    {% endfor %}
-
-    <div>
-        <p>{{ message }}</p>
-        <a href="{{ path('blackjack_start_round') }}">Next Round</a>
-        <a href="{{ path('get_blackjack_homepage') }}">Finish Game</a>
-    </div>
+    <section class="players">
+        <h2>Player</h2>
+        {% for playerCard in playerRevealed %}
+            <img class="card" src="{{ asset('bundles/casinoblackjack/images/cards/' ~ playerCard.name ~ '.png') }}" alt="{{ playerCard.name }}">
+        {% endfor %}
+    </section>
+    <section class="players">
+        <h2>Dealer</h2>
+        {% for dealerCard in dealerRevealed %}
+            <img class="card" src="{{ asset('bundles/casinoblackjack/images/cards/' ~ dealerCard.name ~ '.png') }}" alt="{{ dealerCard.name }}">
+        {% endfor %}
+    </section>
 {% endblock %}

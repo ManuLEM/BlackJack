@@ -2,11 +2,20 @@
 
 {% block body %}
     {{ form(form) }}
-    <div id="players_list">
-        <ol>
+    <table id="players_list">
+        <thead>
+            <td><i class="icon-trophy"></i> Rank</td>
+            <td><i class="icon-user"></i> Player</td>
+            <td><i class="icon-coins"></i> Score</td>
+        </thead>
+        <tbody>
             {% for player in ranking %}
-                <li>{{ player.name }} - {{ player.score }}</li>
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td><a href="{{ path('get_player_page', {'playerId': player.id}) }}">{{ player.name }}</a></td>
+                    <td>{{ player.score }}</td>
+                </tr>
             {% endfor %}
-        </ol>
-    </div>
+        </tbody>
+    </table>
 {% endblock %}

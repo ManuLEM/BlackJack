@@ -1,0 +1,210 @@
+html, body {
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 10px;
+}
+h1, h2 {
+    font-weight: normal;
+    text-align: center;
+}
+#header {
+    background: #3b792c;
+    color: #ffffff;
+    text-align: center;
+    height: 100px;
+    position: relative;
+}
+#header h1 {
+    margin: 0;
+    position: relative;
+    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+}
+header nav {
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    top: -20px;
+    z-index: 2;
+}
+a {
+    color: #000000;
+    text-decoration: none;
+}
+a:hover {
+    color: #3b792c;
+}
+a.navigation, nav a {
+    border-radius: 3px;
+    border: 1px solid #3b792c;
+    color: #3b792c;
+    padding: 5px 10px;
+    transition: all 200ms ease-in-out;
+}
+a.navigation:hover, nav a:hover {
+    background-color: #3b792c;
+    color: #ffcc00;
+}
+#header nav a {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+#header nav a:hover {
+    color: #ffcc00;
+    border-color: #ffcc00;
+}
+#player_name {
+    display: block;
+    line-height: 50px;
+    margin: auto;
+    margin-top: 90px;
+    text-align: center;
+    font-size: 20px;
+}
+#players_list {
+    margin: auto;
+    margin-top: 90px;
+}
+#players_list thead {
+    font-size: 20px;
+}
+#players_list td {
+    padding: 3px 5px;
+    width: 150px;
+    text-align: center;
+    border-top: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+#players_list td:first-child {
+    border-left: 1px solid #000000;
+}
+#players_list tr:last-child {
+    border-bottom: 1px solid #000000;
+}
+#players_list thead {
+    background-color: #3b792c;
+}
+#players_list thead td {
+    color: #ffcc00;
+}
+#players_list .icon-coins {
+    position: relative;
+    top: 1px;
+}
+.wallet, .new {
+    text-align: center;
+    margin: auto;
+}
+.wallet {
+    font-size: 18px;
+    margin: 7px 0;
+}
+.wallet .icon-moneybag, .wallet .icon-coins {
+    font-size: 30px;
+    color: #3b792c;
+    position: relative;
+    top: 4px;
+}
+.wallet .icon-coins {
+    top: 6px;
+}
+.new {
+    display: block;
+    width: 160px;
+    margin-top: 50px;
+}
+#banner {
+    background-color: #eeeeee;
+    color: #000000;
+    height: 50px;
+}
+#banner.won {
+    background-color: #ffcc00;
+}
+#banner.lost {
+    background-color: #ba0000;
+    color: #ffffff;
+}
+#banner.won .message {
+    color: #3b792c;
+}
+#banner.lost .message {
+    color: #000000;
+}
+#banner * {
+    display: inline-block;
+    padding: 0 5px;
+}
+#banner i {
+    padding: 0;
+}
+#banner h1 {
+    margin: 0;
+}
+#banner form {
+    width: calc(100% - 130px);
+}
+#banner form.playing {
+    width: auto;
+    float: right;
+    margin-right: 3px;
+}
+#banner p {
+    margin-right: 20px;
+}
+#banner input[type=submit], #banner button[type=submit], #banner a {
+    background-color: transparent;
+    color: #3b792c;
+    border: 1px solid #3b792c;
+    border-radius: 3px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 9px;
+    padding: 5px 10px;
+    transition: all 200ms ease-in-out;
+}
+#banner input[type=submit]:hover, #banner button[type=submit]:hover, #banner a:hover {
+    color: #ffcc00;
+    background-color: #3b792c;
+}
+#banner.lost input[type=submit], #banner.lost button[type=submit], #banner.lost a {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+#banner.lost input[type=submit]:hover, #banner.lost button[type=submit]:hover, #banner.lost a:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+.icon-stop {
+    font-size: 26px;
+    line-height: 12px;
+    position: relative;
+    top: 4.5px;
+}
+img.card {
+    width: 200px;
+    height: 290px;
+}
+img.card + img.card {
+    margin-left: -120px;
+}
+section.players {
+    display: inline-block;
+    width: 50%;
+    margin-right: -4px;
+    box-sizing: border-box;
+    padding: 15px 10px;
+    text-align: center;
+}
+section.players h2 {
+    margin-bottom: 30px;
+}
+.message {
+    font-size: 30px;
+    line-height: 47px;
+    font-weight: bold;
+    margin: 0;
+}
+#banner.won .message {
+    color: #3b792c;
+}

@@ -1,25 +1,34 @@
 {% extends 'CasinoBlackjackBundle::layout.html.twig' %}
 
 {% block body %}
-    <h1>Hello {{ player.name }}</h1>
-    <p>Your wallet: {{ player.wallet }}</p>
-    <p>Your bet: {{ round.bet }}</p>
-    <p>Your score: {{ game.score }}</p>
+    <header id="banner">
+        <h1>{{ player.name }}</h1>
+        <p class="wallet"><i class="icon-moneybag"></i> {{ player.wallet }}</p>
+        <p class="wallet"><i class="icon-coins"></i> {{ game.score }}</p>
+        <p class="wallet">Bet : {{ round.bet }}</p>
+        <form class="playing" action="{{ path('blackjack_dealerDraw') }}" method="post">
+            <input type="hidden" name="roundId" value="{{ round.id }}">
+            <button type="submit">
+                <i class="icon-stop"></i> Stand
+            </button>
+        </form>
+        <form class="playing" action="{{ path('blackjack_playerDraw') }}" method="post">
+            <input type="hidden" name="roundId" value="{{ round.id }}">
+            <button type="submit">
+                <i class="icon-chevron-right"></i> Hit me
+            </button>
+        </form>
+    </header>
     
-    <h2>Player</h2>
-    {% for playerCard in playerRevealed %}
-        <p>{{ playerCard.name }}</p>
-    {% endfor %}
-    <form action="{{ path('blackjack_playerDraw') }}" method="post">
-        <input type="hidden" name="roundId" value="{{ round.id }}">
-        <input type="submit" value="Hit me">
-    </form>
-    <form action="{{ path('blackjack_dealerDraw') }}" method="post">
-        <input type="hidden" name="roundId" value="{{ round.id }}">
-        <input type="submit" value="Done">
-    </form>
-    <h2>Dealer</h2>
-    {% for dealerCard in dealerRevealed %}
-        <p>{{ dealerCard.name }}</p>
-    {% endfor %}
+    <section class="players">
+        <h2>Player</h2>
+        {% for playerCard in playerRevealed %}
+            <img class="card" src="{{ asset('bundles/casinoblackjack/images/cards/' ~ playerCard.name ~ '.png') }}" alt="{{ playerCard.name }}">
+        {% endfor %}
+    </section>
+    <section class="players">
+        <h2>Dealer</h2>
+        <img class="card" src="{{ asset('bundles/casinoblackjack/images/cards/back.png') }}" alt="Hidden card">
+        <img class="card" src="{{ asset('bundles/casinoblackjack/images/cards/' ~ dealerRevealed[1].name ~ '.png') }}" alt="{{ dealerRevealed[1].name }}">
+    </section>
 {% endblock %}

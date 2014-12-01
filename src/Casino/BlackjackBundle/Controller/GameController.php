@@ -62,7 +62,7 @@ class GameController extends DefaultController
         $game = $player->getGames()->last();
         $round = $game->getRounds()->last();
 
-        if ($round->getWon() !== "") {
+        if ($round->getWon() !== "" || $player->getWallet() < 10) {
             return $this->redirect($this->generateUrl('get_blackjack_homepage'));
         }
 
@@ -253,7 +253,7 @@ class GameController extends DefaultController
         return $score;
     }
 
-    public function endAction($value='')
+    public function endAction()
     {
         $session = new Session();
         if (!$session->get('playerId')) {

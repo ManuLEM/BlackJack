@@ -1,13 +1,26 @@
 {% extends 'CasinoBlackjackBundle::layout.html.twig' %}
 
 {% block body %}
-    <h1>Hello {{ player.name }}</h1>
-    <p>Your wallet: {{ player.wallet }}</p>
-    <a href="{{ path('blackjack_start_game') }}"><button>Start a new game</button></a>
+    <header id="banner">
+        <h1>{{ player.name }}</h1>
+        <p class="wallet"><i class="icon-moneybag"></i> {{ player.wallet }}</p>
+        <a href="{{ path('blackjack_start_game') }}" class="navigation new"><i class="icon-games"></i> Start a new game</a>
+    </header>
 
-    <ol>
-        {% for player in ranking %}
-            <li>{{ player.name }} - {{ player.score }}</li>
-        {% endfor %}
-    </ol>
+    <table id="players_list">
+        <thead>
+            <td><i class="icon-trophy"></i> Rank</td>
+            <td><i class="icon-user"></i> Player</td>
+            <td><i class="icon-coins"></i> Score</td>
+        </thead>
+        <tbody>
+            {% for player in ranking %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td><a href="{{ path('get_player_page', {'playerId': player.id}) }}">{{ player.name }}</a></td>
+                    <td>{{ player.score }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

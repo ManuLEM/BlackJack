@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <title>BlackJack</title>
+    <link rel="stylesheet" href="{{ asset('bundles/casinoblackjack/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/casinoblackjack/css/icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/casinoblackjack/css/style.css') }}">
 </head>
 <body>
+    <header id="header">
+        <h1>BlackJack</h1>
+        <nav><a href="{{ path('get_stats') }}">Stats</a></nav>
+    </header>
     {% block body %}{% endblock %}
 </body>
 </html>
