@@ -62,7 +62,7 @@ class GameController extends DefaultController
         $game = $player->getGames()->last();
         $round = $game->getRounds()->last();
 
-        if ($round->getWon() !== "" || $player->getWallet() < 10) {
+        if ($round->getWon() !== "" || ($player->getWallet() < 10 && $round->getBet() > 0)) {
             return $this->redirect($this->generateUrl('get_blackjack_homepage'));
         }
 
@@ -113,7 +113,6 @@ class GameController extends DefaultController
 
         $round->setBet($bet);
 
-        $revealedNames = $em->getRepository('CasinoBlackjackBundle:Revealed')->findNamesByRoundId($round->getId());
 
         if ($round->getRevealed()->count() > 50) {
             $session->getFlashBag()->add('error', 'The deck is empty, this shouldn\'t happend.');
@@ -122,13 +121,15 @@ class GameController extends DefaultController
 
         $deck = new Deck();
         $revealed = array();
-        
+        $revealedNames = array();
         for ($i=0; $i < 2; $i++) {
             $revealed[$i] = $deck->draw($round, $revealedNames, 'player');
+            array_push($revealedNames, array('name' => $revealed[$i]->getName()));
             $em->persist($revealed[$i]);
         }
         for ($i=2; $i < 4; $i++) {
             $revealed[$i] = $deck->draw($round, $revealedNames, 'dealer');
+            array_push($revealedNames, array('name' => $revealed[$i]->getName()));
             $em->persist($revealed[$i]);
         }
 

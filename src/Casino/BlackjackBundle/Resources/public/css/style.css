@@ -139,23 +139,35 @@ a.navigation:hover, nav a:hover {
 #banner * {
     display: inline-block;
     padding: 0 5px;
+    vertical-align: middle;
 }
 #banner i {
     padding: 0;
 }
 #banner h1 {
     margin: 0;
+    line-height: 50px;
 }
 #banner form {
-    width: calc(100% - 130px);
+    width: calc(100% - 155px);
+    float: right;
+    margin-right: 3px;
 }
 #banner form.playing {
     width: auto;
     float: right;
     margin-right: 3px;
 }
-#banner p {
+#banner p.wallet {
+    margin: 0 ;
     margin-right: 20px;
+    line-height: 50px;
+}
+#banner .wallet .icon-coins {
+    top: 0;
+}
+#banner .wallet .icon-moneybag {
+    top: -3px;
 }
 #banner input[type=submit], #banner button[type=submit], #banner a {
     background-color: transparent;
@@ -164,7 +176,7 @@ a.navigation:hover, nav a:hover {
     border-radius: 3px;
     float: right;
     margin-right: 5px;
-    margin-top: 9px;
+    margin-top: 10px;
     padding: 5px 10px;
     transition: all 200ms ease-in-out;
 }
@@ -182,8 +194,6 @@ a.navigation:hover, nav a:hover {
 .icon-stop {
     font-size: 26px;
     line-height: 12px;
-    position: relative;
-    top: 4.5px;
 }
 img.card {
     width: 200px;
