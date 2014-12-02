@@ -2,8 +2,28 @@
 
 {% block body %}
     <h1>{{ player.name }}</h1>
-    <h2>Total score : {{ total }}</h2>
-    {% for game in player.games %}
-        <p>{{ game.score }}</p>
-    {% endfor %}
+    <h2 id="total-score">{{ total }} pts</h2>
+    <table id="players_list">
+        <thead>
+            <tr>
+                <td colspan="4">Games History (first to last)</td>
+            </tr>
+            <tr>
+                <td>Nbr of Rounds</td>
+                <td>Average Bet</td>
+                <td><i class="icon-coins"></i> Score</td>
+                <td><i class="icon-trophy"></i> Wins</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for game in games %}
+                <tr>
+                    <td>{{ game.rounds|length }}</td>
+                    <td>{{ game.averageBet }}</td>
+                    <td>{{ game.score }}</td>
+                    <td>{{ game.winningPercent }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

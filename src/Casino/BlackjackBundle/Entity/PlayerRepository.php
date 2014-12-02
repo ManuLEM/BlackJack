@@ -50,16 +50,16 @@ class PlayerRepository extends EntityRepository
             if (!isset($ranking[$stat['id']])) {
                 $ranking[$stat['id']]['id'] = $stat['id'];
                 $ranking[$stat['id']]['name'] = $stat['name'];
+                $ranking[$stat['id']]['gamesNbr'] = 0;
                 $ranking[$stat['id']]['score'] = 0;
                 $ranking[$stat['id']]['maxScore'] = 0;
-                $ranking[$stat['id']]['roundNbr'] = $stat['game']->getRounds()->count();
+                $ranking[$stat['id']]['roundsNbr'] = $stat['game']->getRounds()->count();
             }
+            $ranking[$stat['id']]['gamesNbr']++;
             $score = $stat['game']->getScore();
             $ranking[$stat['id']]['score'] += $score;
             $ranking[$stat['id']]['maxScore'] = max($ranking[$stat['id']]['maxScore'], $score);
         }
-
-        usort($ranking, 'self::sort');
         
         return $ranking;
     }

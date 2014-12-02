@@ -21,6 +21,10 @@ h1, h2 {
     transform: translateY(-50%);
     font-size: 50px;
 }
+#header h1 a {
+    color: #ffffff;
+    text-decoration: none;
+}
 header nav {
     position: relative;
     float: right;
@@ -28,11 +32,11 @@ header nav {
     top: -20px;
     z-index: 2;
 }
-a {
+a:not(.title) {
     color: #000000;
     text-decoration: none;
 }
-a:hover {
+a:not(.title):hover {
     color: #3b792c;
 }
 a.navigation, nav a {
@@ -207,4 +211,10 @@ section.players h2 {
 }
 #banner.won .message {
     color: #3b792c;
+}
+#total-score {
+    color: #3b792c;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 60px;
 }

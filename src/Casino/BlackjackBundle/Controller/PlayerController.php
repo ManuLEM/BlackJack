@@ -70,9 +70,27 @@ class PlayerController extends DefaultController
 
         $em = $this->getDoctrine()->getManager();
         $total = $em->getRepository('CasinoBlackjackBundle:Player')->getTotalScore( $playerId );
+        $games = $player->getGames();
+
+        $totalBet = 0;
+        foreach ($games as &$game) {
+            $rounds = $game->getRounds();
+            $winnings = 0;
+            foreach ($rounds as $round) {
+                $totalBet += $round->getBet();
+
+                if ($round->getWon() === 'won') {
+                    $winnings++;
+                }
+            }
+            $allRounds = $rounds->count();
+            $game->averageBet = round($totalBet / $allRounds, 2);
+            $game->winningPercent = round($winnings / $allRounds * 100, 2);
+        }
 
         return $this->render('CasinoBlackjackBundle:Player:index.html.twig', array(
             'player' => $player,
+            'games' => $games,
             'total' => $total
         ));
     }

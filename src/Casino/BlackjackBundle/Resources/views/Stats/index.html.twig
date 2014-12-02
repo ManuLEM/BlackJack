@@ -1,11 +1,27 @@
 {% extends 'CasinoBlackjackBundle::layout.html.twig' %}
 
 {% block body %}
-    <div id="players_list">
-        <ol>
+    <h1>Stats</h1>
+    <table id="players_list">
+        <thead>
+            <tr>
+                <td><i class="icon-user"></i> Name</td>
+                <td><i class="icon-coins"></i> Score</td>
+                <td>Nbr of Games</td>
+                <td>Nbr of Rounds</td>
+                <td><i class="icon-coins"></i> Max Score</td>
+            </tr>
+        </thead>
+        <tbody>
             {% for player in stats %}
-                <li>{{ player.name }} - {{ player.score }} - {{ player.roundNbr }} rounds - best score : {{ player.maxScore }}</li>
+                <tr>
+                    <td>{{ player.name }}</td>
+                    <td>{{ player.score }}</td>
+                    <td>{{ player.gamesNbr }}</td>
+                    <td>{{ player.roundsNbr }}</td>
+                    <td>{{ player.maxScore }}</td>
+                </tr>
             {% endfor %}
-        </ol>
-    </div>
+        </tbody>
+    </table>
 {% endblock %}

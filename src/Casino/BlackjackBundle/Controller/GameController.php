@@ -275,7 +275,7 @@ class GameController extends DefaultController
             $class = "won";
         }
         elseif ($round->getWon() === 'tie') {
-            $message = "Vous êtes à égalité avec la casino !";
+            $message = "Vous êtes à égalité avec le casino !";
             $wallet = $player->getWallet();
             $player->setWallet( $wallet + $bet );
             $class = "tie";
